@@ -44,7 +44,8 @@ function Slider(props) {
   function handleMouseDown(evt) {
     evt.preventDefault()
     setIsDragging(true)
-    setSlackX(getValueFromPosition(evt))
+    const value = getValueFromPosition(evt)
+    setSlackX(value)
     change(value)
     mouseMoveEventRef.current = on(document, 'mousemove', handleDrag)
     mouseUpEventRef.current = on(document, 'mouseup', handleDragEnd)
